@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,8 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
 
     @vite('resources/css/app.css')
     <title>PRSPDNF FH</title>
@@ -57,7 +59,7 @@
             <h1
                 class="mb-8 pt-6 lg:pt-0 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-3xl lg:text-5xl">
                 Langkah Kecil Menuju Kemandirian Besar
-                <span class="block mt-2 lg:mt-4 text-[#FC6C3F]">Bersama Kami di Fajar Harapan!</span>
+                <span class="block mt-2 lg:mt-4 text-[#FC6C3F]">Bersama Kami di <strong>Fajar Harapan</strong>!</span>
             </h1>
 
             <p
@@ -88,8 +90,8 @@
         <div class="max-w-7xl mx-auto px-4 lg:px-8">
             <div class="text-center">
                 <p class="text-xl lg:text-3xl md:text-3xl leading-9 font-extrabold text-[#FC6C3F]">
-                    Panti Rehabilitasi Sosial Penyandang Disabilitas Netra dan Fisik <br class="hidden lg:flex"> Fajar
-                    Harapan
+                    <strong> Panti Rehabilitasi Sosial Penyandang Disabilitas Netra dan Fisik <br class="hidden lg:flex"> Fajar
+                    Harapan </strong>
                 </p>
                 <p class="mt-4 text-xs md:text-sm lg:text-lg leading-7 text-[#21272A] lg:text-center text-justify">
                     Merupakan Unit Pelaksana Teknis Daerah Dinas Sosial Provinsi Kalimantan Selatan yang bertugas
@@ -108,38 +110,42 @@
                         class="lg:w-[30%] md:w-[30%] group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm rounded-lg sm:px-10">
                         <span
                             class="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:scale-[10]"></span>
-                        <div class="relative z-10 mx-auto max-w-md">
-                            <span
-                                class="grid h-20 w-20 place-items-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5"
-                                    class="h-10 w-10 text-white transition-all">
-                                    <!-- Mata -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M1.5 12c2.25-4.5 6.375-7.5 10.5-7.5s8.25 3 10.5 7.5c-2.25 4.5-6.375 7.5-10.5 7.5S3.75 16.5 1.5 12z" />
-                                    <!-- Pupil -->
-                                    <circle cx="12" cy="12" r="3" />
-                                    <!-- Sinyal Misi (garis atas dan bawah) -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 3v2.5M12 18.5v2.5M6.5 6.5l-1.5-1.5M18 6.5l1.5-1.5" />
-                                </svg>
-                            </span>
-                            <div class="pt-5 text-xl font-semibold leading-7">
-                                <p>
-                                    <a href="#"
-                                        class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">Profile
-                                    </a>
-                                </p>
+                        <a class="" href="/profile-visidanmisi">
+                            <div class="relative z-10 mx-auto max-w-md">
+                                <span
+                                    class="grid h-20 w-20 place-items-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5"
+                                        class="h-10 w-10 text-white transition-all">
+                                        <!-- Mata -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M1.5 12c2.25-4.5 6.375-7.5 10.5-7.5s8.25 3 10.5 7.5c-2.25 4.5-6.375 7.5-10.5 7.5S3.75 16.5 1.5 12z" />
+                                        <!-- Pupil -->
+                                        <circle cx="12" cy="12" r="3" />
+                                        <!-- Sinyal Misi (garis atas dan bawah) -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 3v2.5M12 18.5v2.5M6.5 6.5l-1.5-1.5M18 6.5l1.5-1.5" />
+                                    </svg>
+                                </span>
+                                <a class="" href="/profile-visidanmisi">
+                                    <div class="pt-5 text-xl font-semibold leading-7">
+                                        <p class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">
+                                            Profile
+                                        </p>
+                                    </div>
+                                </a>
+                                <a class="" href="/profile-visidanmisi">
+                                    <div
+                                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                        <p>Menjelaskan Visi dan Misi Panti</p>
+                                    </div>
+                                </a>
+                                <div
+                                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                    <p></p>
+                                </div>
                             </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p>Menjelaskan Visi dan Misi Panti</p>
-                            </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p></p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </a>
 
@@ -149,40 +155,42 @@
                         class="lg:w-[30%] md:w-[30%] group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm rounded-lg sm:px-10">
                         <span
                             class="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:scale-[10]"></span>
-                        <div class="relative z-10 mx-auto max-w-md">
-                            <span
-                                class="grid h-20 w-20 place-items-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5"
-                                    class="h-10 w-10 text-white transition-all">
-                                    <!-- Gulungan Kertas -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M8 2.5h8a2.5 2.5 0 0 1 2.5 2.5v11.5a2.5 2.5 0 0 1-2.5 2.5h-8a4 4 0 0 1-4-4V5a2.5 2.5 0 0 1 2.5-2.5z" />
-                                    <!-- Ujung Kanan Bawah -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M16 18h2a2 2 0 1 1 0 4h-8" />
-                                    <!-- Garis di dalam Gulungan -->
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h6" />
-                                </svg>
-
-                            </span>
-
-                            <div class="pt-5 text-xl font-semibold leading-7">
-                                <p>
-                                    <a href="#"
-                                        class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">Profile
-                                    </a>
-                                </p>
+                        <a class="" href="/profile-sejarah">
+                            <div class="relative z-10 mx-auto max-w-md">
+                                <span
+                                    class="grid h-20 w-20 place-items-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5"
+                                        class="h-10 w-10 text-white transition-all">
+                                        <!-- Gulungan Kertas -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8 2.5h8a2.5 2.5 0 0 1 2.5 2.5v11.5a2.5 2.5 0 0 1-2.5 2.5h-8a4 4 0 0 1-4-4V5a2.5 2.5 0 0 1 2.5-2.5z" />
+                                        <!-- Ujung Kanan Bawah -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16 18h2a2 2 0 1 1 0 4h-8" />
+                                        <!-- Garis di dalam Gulungan -->
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h6" />
+                                    </svg>
+                                </span>
+                                <a class="" href="/profile-sejarah">
+                                    <div class="pt-5 text-xl font-semibold leading-7">
+                                        <p class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">
+                                            Profile
+                                        </p>
+                                    </div>
+                                </a>
+                                <a class="" href="/profile-sejarah">
+                                    <div
+                                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                        <p>Lihat Perjalanan Sejarah Panti</p>
+                                    </div>
+                                </a>
+                                <div
+                                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                    <p></p>
+                                </div>
                             </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p>Lihat Perjalanan Sejarah Panti</p>
-                            </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p></p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </a>
 
@@ -192,40 +200,43 @@
                         class="lg:w-[30%] md:w-[30%] group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm rounded-lg sm:px-10">
                         <span
                             class="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:scale-[10]"></span>
-                        <div class="relative z-10 mx-auto max-w-md">
-                            <span
-                                class="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="1.5"
-                                    class="absolute h-10 w-10 text-white transition-all">
-                                    <!-- Rumah (Panti) -->
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M3 10.5L12 3l9 7.5v9.75a1.5 1.5 0 0 1-1.5 1.5h-13.5A1.5 1.5 0 0 1 3 20.25V10.5z" />
-                                    <!-- Pintu Rumah -->
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 21V14h4v7" />
-                                    <!-- Orang (Pegawai) -->
-                                    <circle cx="12" cy="10" r="2.5" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M8 15.5c0-2 1.5-3.5 4-3.5s4 1.5 4 3.5v2h-8v-2z" />
-                                </svg>
-                            </span>
-
-                            <div class="pt-5 text-xl font-semibold leading-7">
-                                <p>
-                                    <a href="#"
-                                        class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">Profile
-                                    </a>
-                                </p>
+                        <a class="" href="/pegawais">
+                            <div class="relative z-10 mx-auto max-w-md">
+                                <span
+                                    class="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#FC6C3F] transition-all duration-300 group-hover:bg-orange-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5"
+                                        class="absolute h-10 w-10 text-white transition-all">
+                                        <!-- Rumah (Panti) -->
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 10.5L12 3l9 7.5v9.75a1.5 1.5 0 0 1-1.5 1.5h-13.5A1.5 1.5 0 0 1 3 20.25V10.5z" />
+                                        <!-- Pintu Rumah -->
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 21V14h4v7" />
+                                        <!-- Orang (Pegawai) -->
+                                        <circle cx="12" cy="10" r="2.5" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8 15.5c0-2 1.5-3.5 4-3.5s4 1.5 4 3.5v2h-8v-2z" />
+                                    </svg>
+                                </span>
+                                <a class="" href="/pegawais">
+                                    <div class="pt-5 text-xl font-semibold leading-7">
+                                        <p class="text-[#FC6C3F] transition-all duration-300 group-hover:text-white">
+                                            Profile
+                                        </p>
+                                    </div>
+                                </a>
+                                <a class="" href="/pegawais">
+                                    <div
+                                        class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                        <p>Informasi Tentang Pegawai Panti</p>
+                                    </div>
+                                </a>
+                                <div
+                                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                    <p></p>
+                                </div>
                             </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p>Informasi Tentang Pegawai Panti</p>
-                            </div>
-                            <div
-                                class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                                <p></p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </a>
 
@@ -587,7 +598,7 @@
     {{-- service end     --}}
 
     {{-- fasilitas start --}}
-    <section class="z-10 " data-aos="fade">
+    <section class="z-50 " data-aos="fade">
         <div class="container mx-auto p-4">
             <div class="text-center mb-8">
                 <h2 class="lg:text-3xl md:text-2xl text-xl font-bold text-[#FC6C3F] py-4">Fasilitas yang disediakan
@@ -1395,8 +1406,8 @@
 
     {{-- review  start --}}
     <x-review></x-review>
-
     {{-- review end --}}
+
     <div class="flex flex-col lg:flex-row items-center bg-[#5959CD] rounded-xl shadow-xl md:mx-4 mx-4 lg:mx-40 my-12">
         <div class="flex lg:w-1/2 w-full lg:h-96 lg:mb-0 justify-center rounded-xl bg-white">
             <img src="{{ asset('Image/Background/image221.png') }}" alt="Image"

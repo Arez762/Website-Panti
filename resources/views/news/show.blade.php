@@ -132,10 +132,6 @@
                         <div class="content text-xs lg:text-sm pt-4 pb-4">
                             <p>{!! $newsItem->content !!}</p>
                         </div>
-                        <a href="{{ route('news.index') }} "
-                            class="back-button text-orange-500 hover:text-orange-600 lg:py-8 py:py-4">&larr; Kembali ke
-                            Daftar
-                            Berita</a>
                     </div>
                 </div>
             </div>

@@ -24,8 +24,7 @@ class PegawaiResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
     protected static ?string $navigationLabel = 'Pegawai';
-
-
+    // protected static ?string $navigationGroup = 'Konten';
 
     public static function form(Form $form): Form
     {
@@ -59,7 +58,16 @@ class PegawaiResource extends Resource
                     ->label('Jabatan')
                     ->sortable()
                     ->searchable(),
+            ])
+            ->filters([])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
+            
     }
 
     public static function getRelations(): array

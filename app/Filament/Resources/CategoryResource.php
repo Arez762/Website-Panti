@@ -20,6 +20,8 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    // protected static ?string $navigationGroup = 'Kelola Berita';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -31,7 +33,7 @@ class CategoryResource extends Resource
                     ->disabled()
                     ->label('Slug'),
             ]);
-    } 
+    }
 
     public static function table(Table $table): Table
     {
@@ -56,39 +58,16 @@ class CategoryResource extends Resource
                                 ->body('The default "Berita Lainnya" category cannot be deleted.')
                                 ->danger()
                                 ->send();
-    
+
                             throw new \Exception('Operation aborted: The default "Berita Lainnya" category cannot be deleted.');
                         }
-    
+
                         // Memindahkan berita ke kategori default lain jika perlu
                         static::reassignNewsToDefaultCategory($record);
                     }),
-            ])
-            ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()
-                    ->before(function ($records) {
-                        foreach ($records as $record) {
-                            if ($record->slug === 'berita-lainnya') {
-                                // Menampilkan notifikasi menggunakan Notification::make()
-                                Notification::make()
-                                    ->title('Error')
-                                    ->body('One or more categories include "Berita Lainnya", which cannot be deleted.')
-                                    ->danger()
-                                    ->send();
-    
-                                throw new \Exception('Operation aborted: Default "Berita Lainnya" category detected.');
-                            }
-    
-                            // Memindahkan berita ke kategori default lain jika perlu
-                            static::reassignNewsToDefaultCategory($record);
-                        }
-                    }),
-            ]);
+                ]);
+            
     }
-    
-
-
-
 
     public static function getRelations(): array
     {
@@ -121,5 +100,25 @@ class CategoryResource extends Resource
 
         // Update all news related to the category to the default category
         News::where('category_id', $category->id)->update(['category_id' => $defaultCategory->id]);
+    }
+
+    public static function canDelete($record): bool
+    {
+        // Cek jika slug adalah 'berita-lainnya'
+        if ($record->slug === 'berita-lainnya') {
+            return false; // Tidak bisa dihapus
+        }
+
+        return true;
+    }
+
+    public static function canEdit($record): bool
+    {
+        // Cek jika slug adalah 'berita-lainnya'
+        if ($record->slug === 'berita-lainnya') {
+            return false; // Tidak bisa diedit
+        }
+
+        return true;
     }
 }

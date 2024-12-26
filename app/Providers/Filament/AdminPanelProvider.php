@@ -20,6 +20,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Navigation\NavigationBuilder;
 use App\Filament\Resources\PegawaiResource;
 use App\Filament\Resources\CategoryResource;
+use App\Filament\Resources\PromotionResource;
 use App\Filament\Resources\InfographicResource;
 use Illuminate\Session\Middleware\StartSession;
 use App\Filament\Resources\PhotoGalleryResource;
@@ -68,30 +69,28 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
                 \App\Filament\Resources\NewsResource\Widgets\NewsOverview::class,
-                \App\Filament\Resources\CategoryResource\Widgets\NewsChart::class,
-                \App\Filament\Resources\CategoryResource\Widgets\NewsByUserChart::class,
             ])
 
-            ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
-                return $builder->items([
-                    NavigationItem::make('Dashboard')
-                        ->icon('heroicon-o-home')
-                        ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
-                        ->url(fn(): string => Dashboard::getUrl()),
-                    ...UserResource::getNavigationItems(),
+            // ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
+            //     return $builder->items([
+            //         NavigationItem::make('Dashboard')
+            //             ->icon('heroicon-o-home')
+            //             ->isActiveWhen(fn(): bool => request()->routeIs('filament.admin.pages.dashboard'))
+            //             ->url(fn(): string => Dashboard::getUrl()),
+            //         ...UserResource::getNavigationItems(),
             
-                    NavigationItem::make('Konten')
-                        ->isActiveWhen(fn(): bool => false)
-                        ->icon(null),
+            //         NavigationItem::make('Konten')
+            //             ->isActiveWhen(fn(): bool => false)
+            //             ->icon(null),
             
-                    ...CategoryResource::getNavigationItems(),
-                    ...NewsResource::getNavigationItems(),
-                    ...PhotoGalleryResource::getNavigationItems(),
-                    ...PegawaiResource::getNavigationItems(),
-                    ...InfographicResource::getNavigationItems(),
+            //         ...CategoryResource::getNavigationItems(),
+            //         ...NewsResource::getNavigationItems(),
+            //         ...PhotoGalleryResource::getNavigationItems(),
+            //         ...PegawaiResource::getNavigationItems(),
+            //         ...InfographicResource::getNavigationItems(),
                     
-                ]);
-            })
+            //     ]);
+            // })
 
             ->middleware([
                 EncryptCookies::class,

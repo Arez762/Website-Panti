@@ -100,7 +100,7 @@
                             <img class="rounded-full h-10 w-10 object-cover"
                                 src="{{ asset('Image/icon-review/profile-user.png') }}" alt="avatar" />
                             <div class="block">
-                                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Hamba Allah
+                                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Annisa
                                 </h5>
                                 <span class="text-sm leading-4 text-gray-500">Client Panti</span>
                             </div>
@@ -163,7 +163,7 @@
                             <img class="rounded-full h-10 w-10 object-cover"
                                 src="{{ asset('Image/icon-review/profile-user.png') }}" alt="avatar" />
                             <div class="block">
-                                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Anonim
+                                <h5 class="text-gray-900 font-medium transition-all duration-500  mb-1">Budi
                                 </h5>
                                 <span class="text-sm leading-4 text-gray-500">Client Panti</span>
                             </div>

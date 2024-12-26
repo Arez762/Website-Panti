@@ -86,17 +86,6 @@ class UserResource extends Resource
                         self::reassignNewsToDefaultAuthor($record);
                     })
                     ->visible(fn() => Auth::user()->role === 'admin'),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()
-                        ->before(function ($records) {
-                            foreach ($records as $record) {
-                                self::reassignNewsToDefaultAuthor($record);
-                            }
-                        })
-                        ->visible(fn() => Auth::user()->role === 'admin'),
-                ]),
             ]);
     }
 
@@ -131,6 +120,10 @@ class UserResource extends Resource
         News::where('user_id', $user->id)->update(['user_id' => $defaultAuthor->id]);
     }
 
+
+
+
+
     /**
      * Only admin can view users.
      */
@@ -146,11 +139,19 @@ class UserResource extends Resource
 
     public static function canEdit($record): bool
     {
+        if ($record->email === 'author@default.com') {
+            return false; // Mencegah penghapusan
+        }
+
         return Auth::user()->role === 'admin';
     }
 
     public static function canDelete($record): bool
     {
+        if ($record->email === 'author@default.com') {
+            return false; // Mencegah penghapusan
+        }
+
         return Auth::user()->role === 'admin';
     }
 }

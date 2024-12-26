@@ -24,6 +24,8 @@ class InfographicResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
+    // protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -54,6 +56,7 @@ class InfographicResource extends Resource
             ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

@@ -33,6 +33,8 @@ class PhotoGalleryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
+    // protected static ?string $navigationGroup = 'Konten';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -81,6 +83,7 @@ class PhotoGalleryResource extends Resource
                     ->icon('heroicon-s-pencil')
                     ->tooltip('Edit Photo')
                     ->visible(fn() => Auth::user()->role === 'admin'),
+                Tables\Actions\DeleteAction::make(),
                 Tables\Actions\RestoreAction::make()
                     ->visible(fn($record) => $record->trashed()), // Hanya tampil untuk data yang dihapus sementara
                 Tables\Actions\ForceDeleteAction::make()

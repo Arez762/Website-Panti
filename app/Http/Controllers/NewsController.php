@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Category;
+use App\Models\Promotion;
 use App\Models\Infographic;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -11,8 +12,20 @@ use Illuminate\Validation\ValidationException;
 
 class NewsController extends Controller
 {
+    public function home()
+    {
+        
+        $recentNewsHeader = News::with('category')
+        ->where('status', 'publish')
+        ->orderByDesc('created_at')
+        ->take(12)
+        ->get();
+        
+        // Menampilkan data ke halaman utama (view.index)
+        return view('index', compact('recentNewsHeader'));
+    }
     // Menampilkan daftar berita
-    public function index(Request $request, $forHome = false)
+    public function index(Request $request)
     {
         $search = $request->input('search');
 
@@ -69,11 +82,6 @@ class NewsController extends Controller
             ->latest() // Mengurutkan berdasarkan kolom `created_at` secara descending
             ->take(3) // Ambil 3 data terbaru
             ->get();
-
-
-        if ($forHome) {
-            return view('index', compact('news', 'categories', 'topViewsNews', 'recentNews', 'recentNewsHeader', 'newsByCategory', 'activeInfographics'));
-        }
 
         return view('news.index', compact('news', 'categories', 'topViewsNews', 'recentNews', 'search', 'recentNewsHeader', 'newsByCategory', 'activeInfographics'));
     }

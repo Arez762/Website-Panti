@@ -5,6 +5,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\InfographicController;
 
 
@@ -40,3 +41,7 @@ Route::get('/', [NewsController::class, 'index'])->name('index')->defaults('forH
 
 
 Route::resource('pegawais', PegawaiController::class);
+
+Route::get('/', [NewsController::class, 'home'])->name('home');
+
+Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');

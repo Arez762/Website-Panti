@@ -2,149 +2,190 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Looping Carousel with Tailwind</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .swiper-wrapper {
-            width: 100%;
-            height: max-content !important;
-            padding-bottom: 64px !important;
-            -webkit-transition-timing-function: linear !important;
-            transition-timing-function: linear !important;
-            position: relative;
-        }
-
-        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-            background: #4F46E5 !important;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
+    @vite('resources/css/app.css')
+    <title>PRSPDNF</title>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body class="bg-[#F3F4F8] font-poppins flex flex-col min-h-screen">
+    <!-- MDI Icons -->
 
-    <div class="relative w-full overflow-hidden">
-        <!-- Slide container -->
-        <div id="slideshow" class="flex transition-transform duration-700">
-            <!-- Slide 1 -->
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 1" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 1</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 1.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 2</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 2.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 3</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 3.</p>
-                    </div>
+
+    <!-- Page Container -->
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+
+        <!-- Meet the Team -->
+        <div class="flex flex-col justify-center ">
+            <!-- Section Header -->
+            <div class="flex flex-wrap justify-center text-center mb-12 ">
+                <div class="w-full lg:w-6/12 px-4">
+                    <!-- Header -->
+                    <p class="text-gray-900 text-xl font-semibold pt-12">
+                        THE TEAM
+                    </p>
+
+                    <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+                        Our<span class="text-orange-500"> Developer Team</span>
+                    </h3>
                 </div>
             </div>
 
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 3</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 3.</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Team Members -->
+            <div class="flex flex-wrap justify-center">
+                <!-- Member #1 -->
+                <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                    <div class="flex flex-col">
+                        <!-- Avatar -->
+                        <a href="#" class="mx-auto">
+                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                src="{{ asset('Image/aboutus/ipin.png') }}">
+                        </a>
 
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 3</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 3.</p>
-                    </div>
-                </div>
-            </div>
+                        <!-- Details -->
+                        <div class="text-center mt-6">
+                            <!-- Name -->
+                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                Muhammad Ilham Arifin
+                            </h1>
 
-            <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://via.placeholder.com/400x200" alt="Slide 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold mb-2">Card Title 3</h3>
-                        <p class="text-sm text-gray-600">This is a description for card 3.</p>
+                            <!-- Title -->
+                            <div class="text-gray-700 font-light mb-2">
+                                UI/UX Designer
+                            </div>
+
+                            <!-- Social Icons -->
+                            <div
+                                class="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                <!-- Linkedin -->
+                                <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                    <i class="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Twitter -->
+                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                    <i class="mdi mdi-github text-blue-300 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member #2 -->
+                <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                    <div class="flex flex-col">
+                        <!-- Avatar -->
+                        <a href="#" class="mx-auto">
+                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                src="{{ asset('Image/aboutus/112233.png') }}">
+                        </a>
+
+                        <!-- Details -->
+                        <div class="text-center mt-6">
+                            <!-- Name -->
+                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                Abdillah Rezeki
+                            </h1>
+                            <div class="mb-8"></div>
+                            <!-- Title -->
+                            <div class="text-gray-700 font-light mb-2">
+                                Full-Stack Developer
+                            </div>
+
+                            <!-- Social Icons -->
+                            <div
+                                class="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                <!-- Linkedin -->
+                                <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                    <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Twitter -->
+                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                    <i class="mdi mdi-github text-blue-400 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member #3 -->
+                <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                    <div class="flex flex-col">
+                        <!-- Avatar -->
+                        <a href="#" class="mx-auto">
+                            <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                src="{{ asset('Image/aboutus/akbar.png') }}">
+                        </a>
+
+                        <!-- Details -->
+                        <div class="text-center mt-6">
+                            <!-- Name -->
+                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                Muhammad Rizki Akbar
+                            </h1>
+
+                            <!-- Title -->
+                            <div class="text-gray-700 font-light mb-2">
+                                Database Developer
+                            </div>
+
+                            <!-- Social Icons -->
+                            <div
+                                class="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                <!-- Linkedin -->
+                                <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                    <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Twitter -->
+                                <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                    <i class="mdi mdi-github text-blue-400 mx-auto mt-2"></i>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                    <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Add more slides as needed -->
         </div>
-
-        <!-- Navigation Buttons -->
-        <button id="prev"
-            class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">
-            &#10094;
-        </button>
-        <button id="next"
-            class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full">
-            &#10095;
-        </button>
     </div>
-    <script>
-        const slideshow = document.getElementById("slideshow");
-        const slides = slideshow.children;
-        const prevButton = document.getElementById("prev");
-        const nextButton = document.getElementById("next");
 
-        let currentIndex = 0;
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2024 Magang PRSPDNF FH. All rights reserved.rved.
+        </div>
+    </footer>
 
-        // Fungsi untuk memperbarui posisi slide
-        function updateSlideshow() {
-            const slideWidth = slides[0].offsetWidth;
-            slideshow.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-
-        // Tombol sebelumnya
-        prevButton.addEventListener("click", () => {
-            // Jika index adalah 0, pindah ke slide terakhir
-            currentIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
-            updateSlideshow();
-        });
-
-        // Tombol berikutnya
-        nextButton.addEventListener("click", () => {
-            // Jika index adalah slide terakhir, kembali ke slide pertama
-            currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
-            updateSlideshow();
-        });
-
-        // Auto-looping (opsional)
-        let autoSlide = setInterval(() => {
-            currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
-            updateSlideshow();
-        }, 3000); // Geser setiap 3 detik
-
-        // Hentikan auto-slide saat user berinteraksi
-        [prevButton, nextButton].forEach((button) => {
-            button.addEventListener("click", () => {
-                clearInterval(autoSlide);
-                autoSlide = setInterval(() => {
-                    currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
-                    updateSlideshow();
-                }, 3000); // Restart auto-slide
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- Include file JS menggunakan Vite -->
+    @vite(['resources/js/app.js', 'resources/js/custom/custom.js'])
 
 </body>
 

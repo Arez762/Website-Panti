@@ -9,7 +9,7 @@ use Spatie\Permission\Traits\HasRoles; // Import trait HasRoles
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable; // Gunakan HasRoles untuk manajemen role dan permission
+    use HasFactory, Notifiable; // Tambahkan HasRoles untuk manajemen role dan permission
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role', // Pastikan 'role' dapat diisi
     ];
 
     /**
@@ -41,4 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected static function booted()
+{
+    static::deleting(function ($user) {
+        if ($user->email === 'author@default.com') {
+            throw new \Exception('The default author account cannot be deleted.');
+        }
+    });
+}
 }

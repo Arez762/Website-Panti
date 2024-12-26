@@ -30,6 +30,8 @@ class NewsResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
+    // protected static ?string $navigationGroup = 'Kelola Berita';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -46,7 +48,6 @@ class NewsResource extends Resource
                     ->fileAttachmentsVisibility('public')
                     ->fileAttachmentsDirectory('uploads')
                     ->profile('default|simple|full|minimal|none|custom')
-                    ->rtl() // Set RTL or use ->direction('auto|rtl|ltr')
                     ->columnSpan('full')
                     ->required(),
                 FileUpload::make('thumbnail')
@@ -59,7 +60,7 @@ class NewsResource extends Resource
                 FileUpload::make('gallery')
                     ->image()
                     ->multiple()
-                    ->label('Galeri Gambar')
+                    ->label('Tambah Gambar')
                     ->directory('galleries')
                     ->maxFiles(6)
                     ->maxSize(10240)
@@ -81,6 +82,7 @@ class NewsResource extends Resource
                 DateTimePicker::make('upload_time')
                     ->default(now())
                     ->required()
+                    ->disabled()
                     ->label('Waktu Unggah'),
                 Select::make('status')
                     ->options([
@@ -123,11 +125,6 @@ class NewsResource extends Resource
                 Tables\Columns\ImageColumn::make('thumbnail')
                     ->label('Thumbnail')
                     ->size(150),
-                Tables\Columns\TextColumn::make('upload_time')
-                    ->label('Waktu Unggah')
-                    ->dateTime()
-                    ->searchable()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Dibuat Pada')
                     ->dateTime()
@@ -181,6 +178,7 @@ class NewsResource extends Resource
 
     public static function canDelete($record): bool
     {
+        
         return Auth::user()->role === 'admin';
     }
 }

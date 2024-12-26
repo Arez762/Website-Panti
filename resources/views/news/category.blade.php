@@ -146,8 +146,6 @@
                     {{ $news->appends(['search' => request('search')])->links() }}
                 </div>
             </div>
-            <a href="{{ route('news.index') }}" class="back-button text-orange-500 hover:text-orange-600">&larr;
-                Kembali ke Daftar Berita</a>
         </div>
 
 
